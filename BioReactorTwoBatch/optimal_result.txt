@@ -1,0 +1,95 @@
+Model Run On 2022-11-28T11:41:19.425213
+
+Optimal Solution Found
+
+Problem solved in 328 milliseconds
+Problem solved in 130 iterations
+Problem solved in 1 branch-and-bound nodes
+
+
+Profit = 47.288
+
+Decision Variables: ( 61  ):
+---------------------------
+produce A  at BR1 on P1
+produce R+ at BR2 on P1
+produce A  at BR1 using Std on P2 if High Demand
+produce R+ at BR2 using Std on P2 if High Demand
+produce C  at BR2 using Std on P2 if More of the Same
+produce A  at BR1 using BF  on P2 if More of the Same
+produce C  at BR2 using Std on P2 if R+ Down C Up
+produce A  at BR1 using BF  on P2 if R+ Down C Up
+stockout  of C  on P2 if High Demand------------------------:    20.000
+stockout  of R+ on P2 if More of the Same-------------------:    10.000
+inventory of A  on P1 if High Demand------------------------:    25.000
+inventory of C  on P1 if High Demand------------------------:    10.000
+inventory of R+ on P1 if High Demand------------------------:    30.000
+inventory of A  on P1 if More of the Same-------------------:    35.000
+inventory of C  on P1 if More of the Same-------------------:    10.000
+inventory of R+ on P1 if More of the Same-------------------:    40.000
+inventory of A  on P1 if R+ Down C Up-----------------------:    35.000
+inventory of R+ on P1 if R+ Down C Up-----------------------:    60.000
+inventory of A  on P2 if High Demand------------------------:    20.000
+inventory of R+ on P2 if High Demand------------------------:    30.000
+inventory of A  on P2 if More of the Same-------------------:    25.000
+inventory of C  on P2 if More of the Same-------------------:    50.000
+inventory of R+ on P2 if More of the Same-------------------:    20.000
+inventory of A  on P2 if R+ Down C Up-----------------------:    25.000
+inventory of C  on P2 if R+ Down C Up-----------------------:    30.000
+inventory of R+ on P2 if R+ Down C Up-----------------------:    50.000
+end inventory True if More of the Same
+end inventory True if R+ Down C Up
+
+
+Model Constraints ( 50  ):
+--------------------------                                 LB      Value         UB
+p1_mflow_A if High Demand                              10.000     10.000     10.000
+p1_mflow_A if More of the Same                          0.000      0.000      0.000
+p1_mflow_A if R+ Down C Up                              0.000      0.000      0.000
+p1_mflow_C if High Demand                             -10.000    -10.000    -10.000
+p1_mflow_C if More of the Same                        -10.000    -10.000    -10.000
+p1_mflow_C if R+ Down C Up                              0.000      0.000      0.000
+p1_mflow_R+ if High Demand                             10.000     10.000     10.000
+p1_mflow_R+ if More of the Same                         0.000      0.000      0.000
+p1_mflow_R+ if R+ Down C Up                           -20.000    -20.000    -20.000
+p2_mflow_A if High Demand                              40.000     40.000     40.000
+p2_mflow_A if More of the Same                         30.000     30.000     30.000
+p2_mflow_A if R+ Down C Up                             30.000     30.000     30.000
+p2_mflow_C if High Demand                              30.000     30.000     30.000
+p2_mflow_C if More of the Same                         30.000     30.000     30.000
+p2_mflow_C if R+ Down C Up                             40.000     40.000     40.000
+p2_mflow_R+ if High Demand                             40.000     40.000     40.000
+p2_mflow_R+ if More of the Same                        30.000     30.000     30.000
+p2_mflow_R+ if R+ Down C Up                            10.000     10.000     10.000
+p1_capacity_BR1                                         1.000      1.000      1.000
+p1_capacity_BR2                                         1.000      1.000      1.000
+p2_capacity_BR1 if High Demand                          1.000      1.000      1.000
+p2_capacity_BR1 if More of the Same                     1.000      1.000      1.000
+p2_capacity_BR1 if R+ Down C Up                         1.000      1.000      1.000
+p2_capacity_BR2 if High Demand                          1.000      1.000      1.000
+p2_capacity_BR2 if More of the Same                     1.000      1.000      1.000
+p2_capacity_BR2 if R+ Down C Up                         1.000      1.000      1.000
+P1 Downstream_Constr                                     -inf     45.500     60.000
+P1 Delivery_Constr                                       -inf     52.000     55.000
+P2 Downstream_Constr if High Demand                      -inf     45.500     60.000
+P2 Delivery_Constr if High Demand                        -inf     52.000     55.000
+P2 Downstream_Constr if More of the Same                 -inf     52.000     60.000
+P2 Delivery_Constr if More of the Same                   -inf     51.000     55.000
+P2 Downstream_Constr if R+ Down C Up                     -inf     52.000     60.000
+P2 Delivery_Constr if R+ Down C Up                       -inf     51.000     55.000
+bf_available for A at BR1 if High Demand                 -inf     -1.000      0.000
+bf_available for A at BR1 if More of the Same            -inf      0.000      0.000
+bf_available for A at BR1 if R+ Down C Up                -inf      0.000      0.000
+bf_available for C at BR2 if High Demand                 -inf      0.000      0.000
+bf_available for C at BR2 if More of the Same            -inf      0.000      0.000
+bf_available for C at BR2 if R+ Down C Up                -inf      0.000      0.000
+end_inventory_A if High Demand                          0.000     20.000        inf
+end_inventory_C if High Demand                          0.000      0.000        inf
+end_inventory_R+ if High Demand                         0.000     30.000        inf
+end_inventory_A if More of the Same                     0.000      5.000        inf
+end_inventory_C if More of the Same                     0.000     30.000        inf
+end_inventory_R+ if More of the Same                    0.000      0.000        inf
+end_inventory_A if R+ Down C Up                         0.000      5.000        inf
+end_inventory_C if R+ Down C Up                         0.000     10.000        inf
+end_inventory_R+ if R+ Down C Up                        0.000     30.000        inf
+end_inventory_true_in_probability                       0.750      0.750        inf

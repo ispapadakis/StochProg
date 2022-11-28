@@ -1,0 +1,70 @@
+# Basic Info
+
+Model_Name: "Two Stage Profit Maximization"
+
+Brands:
+  - "A"
+  - "C"
+  - "R+"
+
+Bioreactors:
+  - "BR1"
+  - "BR2"
+
+ProcessType:
+  - "Std"
+  - "BF"
+
+Periods:
+ - P1
+ - P2
+
+# Objective Multipliers
+
+Revenue:         [1.50, 1.30, 1.40]
+Stockout_Cost:   [0.50, 0.40, 0.70]
+Inventory_Cost:  [0.01, 0.02, 0.01]
+
+# Demand Scenarios
+# Format: name, probability, outcome vector [A, C, R+]
+
+Demand_Scenarios:
+  - {'name':"High Demand",      'prob':0.25, 'vector':[40, 30, 40]}
+  - {'name':"More of the Same", 'prob':0.50, 'vector':[30, 30, 30]}
+  - {'name':"R+ Down C Up",     'prob':0.25, 'vector':[30, 40, 10]}
+
+Prior_Inventory:
+  A:  30
+  C:  40
+  R+: 30
+
+End_Inventory:
+  A:  20
+  C:  20
+  R+: 20
+  ProbLimit: 0.75
+
+### Model Constraints
+# Utilization Vector: Amount for Each Brand in Order A, C, R+
+# Constraint in form: [Utilization Vector, Constr Type, Limit]
+
+Downstream_Constr: [[0.5, 0.6, 0.7], "<=", 60]
+Delivery_Constr:   [[0.8, 0.5, 0.6], "<=", 55]
+
+### Production Data by Process Type, Reactor, and Brand
+
+Prod_Data:
+  Std:
+    BR1:
+      A:  {'Capacity':35, 'ProdCost':1.00}
+      R+: {'Capacity':25, 'ProdCost':1.10}
+    BR2:
+      C:  {'Capacity':70, 'ProdCost':1.20}
+      R+: {'Capacity':40, 'ProdCost':1.10}
+  BF:
+    BR1:
+      A:  {'Capacity':20, 'ProdCost':0.65}
+    BR2:
+      C:  {'Capacity':40, 'ProdCost':0.80}
+
+ 

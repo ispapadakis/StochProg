@@ -1,0 +1,18 @@
+Model Run On 2022-11-28T11:40:09.830603
+
+Optimal Solution Found
+
+Profit = 27.750
+
+Decision Variables:
+-------------------
+prod_of_A_at_BR1          1.000
+prod_of_R+_at_BR1         0.000
+prod_of_C_at_BR2          0.000
+prod_of_R+_at_BR2         1.000
+stockout_of_A             0.000
+stockout_of_C             2.500
+stockout_of_R+            0.000
+inventory_of_A           32.500
+inventory_of_C            0.000
+inventory_of_R+          42.500
