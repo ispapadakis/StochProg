@@ -90,8 +90,8 @@ def main():
     
     ### Declare Constraints
     
-    # Stockout Constraints
-    # In Form Production + Stockouts >= Demand <=> Stockouts >= Demand - Production
+    # Material Flow Constraints
+    # Product + Prior_Inventory + Stockout = Demand + New_Inventory
     
     avg_demand = get_avg_demand(data['Demand_Scenarios'])
     
